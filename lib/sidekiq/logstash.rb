@@ -23,7 +23,7 @@ module Sidekiq
         # Add logstash support
         config.server_middleware do |chain|
           chain.add Sidekiq::Middleware::Server::LogstashLogging
-          chain.remove Sidekiq::Middleware::Server::Logging
+          chain.remove Sidekiq::Logging
         end
 
         # Set custom formatter for Sidekiq logger
